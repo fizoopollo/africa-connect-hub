@@ -1,3 +1,4 @@
+import smileHero from "@/assets/smile-hero.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
@@ -23,7 +24,11 @@ export default function SmileTemplate() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-24 md:py-36 overflow-hidden" style={{ background: "linear-gradient(135deg, #0d9488 0%, #0891b2 100%)" }}>
+      <section className="relative py-24 md:py-36 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={smileHero} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(13,148,136,0.85), rgba(8,145,178,0.85))" }} />
+        </div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-20 w-80 h-80 rounded-full bg-white/30 blur-3xl" />
         </div>

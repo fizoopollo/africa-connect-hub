@@ -1,3 +1,4 @@
+import airconHero from "@/assets/aircon-hero.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
@@ -19,7 +20,11 @@ export default function AirconTemplate() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-24 md:py-36 overflow-hidden" style={{ background: "linear-gradient(135deg, #15803d 0%, #166534 100%)" }}>
+      <section className="relative py-24 md:py-36 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={airconHero} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(21,128,61,0.85), rgba(22,101,52,0.85))" }} />
+        </div>
         <div className="absolute inset-0 opacity-15">
           <div className="absolute top-20 right-10 w-96 h-96 rounded-full bg-emerald-300/30 blur-[100px]" />
         </div>

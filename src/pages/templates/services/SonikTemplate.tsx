@@ -1,3 +1,4 @@
+import sonikHero from "@/assets/sonik-hero.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
@@ -90,11 +91,11 @@ export default function SonikTemplate() {
         <div className="container">
           <h2 className="text-3xl font-serif font-bold text-center mb-10" style={{ fontFamily: "'Playfair Display', serif" }}>Our Space</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {Array.from({ length: 4 }).map((_, i) => (
+            {[sonikHero, sonikHero, sonikHero, sonikHero].map((img, i) => (
               <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="aspect-square rounded-2xl bg-gradient-to-br from-emerald-200 to-emerald-300 flex items-center justify-center"
+                className="aspect-square rounded-2xl overflow-hidden"
               >
-                <Droplets className="h-10 w-10 text-emerald-500/40" />
+                <img src={img} alt="Spa space" className="w-full h-full object-cover" />
               </motion.div>
             ))}
           </div>

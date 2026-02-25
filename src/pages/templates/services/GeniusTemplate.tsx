@@ -1,3 +1,4 @@
+import geniusHero from "@/assets/genius-hero.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
@@ -60,10 +61,12 @@ export default function GeniusTemplate() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <div className="relative rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm p-8">
-                <div className="grid grid-cols-2 gap-4">
+              <div className="relative rounded-3xl overflow-hidden">
+                <img src={geniusHero} alt="Home service professional" className="w-full h-full object-cover rounded-3xl" />
+                <div className="absolute inset-0 bg-black/40 rounded-3xl" />
+                <div className="absolute inset-0 p-8 grid grid-cols-2 gap-4 items-end">
                   {stats.map((s) => (
-                    <div key={s.label} className="text-center p-4 rounded-2xl bg-white/10">
+                    <div key={s.label} className="text-center p-4 rounded-2xl bg-white/10 backdrop-blur-sm">
                       <p className="text-3xl font-black text-white">{s.value}</p>
                       <p className="text-sm text-white/60 mt-1">{s.label}</p>
                     </div>

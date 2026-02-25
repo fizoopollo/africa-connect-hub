@@ -1,3 +1,4 @@
+import grainHero from "@/assets/grain-hero.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
@@ -62,8 +63,8 @@ export default function GrainTemplate() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <div className="aspect-[3/4] rounded-3xl bg-gradient-to-br from-stone-200 to-stone-300 flex items-center justify-center">
-                <Sparkles className="h-16 w-16 text-stone-400" />
+              <div className="aspect-[3/4] rounded-3xl overflow-hidden">
+                <img src={grainHero} alt="Life coach in studio" className="w-full h-full object-cover" />
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>

@@ -1,3 +1,4 @@
+import panoramaHero from "@/assets/panorama-hero.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
@@ -82,8 +83,8 @@ export default function PanoramaTemplate() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <div className="aspect-[3/4] rounded-sm bg-gradient-to-br from-stone-200 to-stone-300 flex items-center justify-center">
-                <Sofa className="h-20 w-20 text-stone-400" />
+              <div className="aspect-[3/4] rounded-sm overflow-hidden">
+                <img src={panoramaHero} alt="Luxury interior design" className="w-full h-full object-cover" />
               </div>
             </motion.div>
           </div>

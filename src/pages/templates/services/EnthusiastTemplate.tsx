@@ -1,3 +1,4 @@
+import enthusiastHero from "@/assets/enthusiast-hero.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
@@ -110,8 +111,8 @@ export default function EnthusiastTemplate() {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="w-48 h-48 rounded-full bg-amber-950/10 flex items-center justify-center">
-                <Sparkles className="h-20 w-20 text-amber-950/30" />
+              <div className="w-48 h-48 rounded-full overflow-hidden">
+                <img src={enthusiastHero} alt="Beauty products" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
