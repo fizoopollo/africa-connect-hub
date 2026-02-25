@@ -19,6 +19,7 @@ import BeautyTemplate from "./pages/templates/BeautyTemplate";
 import BeautyGalleryTemplate from "./pages/templates/beauty/BeautyGalleryTemplate";
 import BeautyTemplatePage from "./pages/templates/beauty/BeautyTemplatePage";
 import BeYoursTemplate from "./pages/templates/beauty/BeYoursTemplate";
+import WonderTemplate from "./pages/templates/beauty/WonderTemplate";
 import NoteableTemplate from "./pages/templates/services/NoteableTemplate";
 import TattooTemplate from "./pages/templates/services/TattooTemplate";
 import GeniusTemplate from "./pages/templates/services/GeniusTemplate";
@@ -87,6 +88,7 @@ const App = () => (
           <Route path="/afrify/templates/services" element={<ServicesTemplate />} />
           <Route path="/afrify/templates/beauty" element={<BeautyGalleryTemplate />} />
           <Route path="/afrify/templates/beauty/beyours" element={<BeYoursTemplate />} />
+          <Route path="/afrify/templates/beauty/wonder" element={<WonderTemplate />} />
           <Route path="/afrify/templates/beauty/:slug" element={<BeautyTemplatePage />} />
           <Route path="/afrify/templates/services/noteable" element={<NoteableTemplate />} />
           <Route path="/afrify/templates/services/tattoo" element={<TattooTemplate />} />
