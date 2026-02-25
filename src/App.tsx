@@ -18,6 +18,16 @@ import ServicesTemplate from "./pages/templates/ServicesTemplate";
 import BeautyTemplate from "./pages/templates/BeautyTemplate";
 import NoteableTemplate from "./pages/templates/services/NoteableTemplate";
 import TattooTemplate from "./pages/templates/services/TattooTemplate";
+import GeniusTemplate from "./pages/templates/services/GeniusTemplate";
+import WorkflowTemplate from "./pages/templates/services/WorkflowTemplate";
+import GrainTemplate from "./pages/templates/services/GrainTemplate";
+import SmileTemplate from "./pages/templates/services/SmileTemplate";
+import PanoramaTemplate from "./pages/templates/services/PanoramaTemplate";
+import PrintingTemplate from "./pages/templates/services/PrintingTemplate";
+import SonikTemplate from "./pages/templates/services/SonikTemplate";
+import LeapTemplate from "./pages/templates/services/LeapTemplate";
+import AirconTemplate from "./pages/templates/services/AirconTemplate";
+import EnthusiastTemplate from "./pages/templates/services/EnthusiastTemplate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +54,16 @@ const App = () => (
           <Route path="/afrify/templates/beauty" element={<BeautyTemplate />} />
           <Route path="/afrify/templates/services/noteable" element={<NoteableTemplate />} />
           <Route path="/afrify/templates/services/tattoo" element={<TattooTemplate />} />
+          <Route path="/afrify/templates/services/genius" element={<GeniusTemplate />} />
+          <Route path="/afrify/templates/services/workflow" element={<WorkflowTemplate />} />
+          <Route path="/afrify/templates/services/grain" element={<GrainTemplate />} />
+          <Route path="/afrify/templates/services/smile" element={<SmileTemplate />} />
+          <Route path="/afrify/templates/services/panorama" element={<PanoramaTemplate />} />
+          <Route path="/afrify/templates/services/printing" element={<PrintingTemplate />} />
+          <Route path="/afrify/templates/services/sonik" element={<SonikTemplate />} />
+          <Route path="/afrify/templates/services/leap" element={<LeapTemplate />} />
+          <Route path="/afrify/templates/services/aircon" element={<AirconTemplate />} />
+          <Route path="/afrify/templates/services/enthusiast" element={<EnthusiastTemplate />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

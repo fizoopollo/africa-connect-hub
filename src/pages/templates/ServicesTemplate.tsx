@@ -14,7 +14,7 @@ const templates = [
     tagline: "Home Services at Your Doorstep",
     features: ["Booking System", "Service Listings", "Client Logos"],
     isNew: false,
-    path: "",
+    path: "/afrify/templates/services/genius",
   },
   {
     name: "Noteable",
@@ -36,7 +36,7 @@ const templates = [
     tagline: "Your Trusted Partner in Modern Tech Maintenance",
     features: ["Service Grid", "Statistics", "Tech Support"],
     isNew: true,
-    path: "",
+    path: "/afrify/templates/services/workflow",
   },
   {
     name: "Grain",
@@ -47,7 +47,7 @@ const templates = [
     tagline: "Meet Your New Clarity Coach",
     features: ["About Section", "Press Logos", "Service Tiers"],
     isNew: false,
-    path: "",
+    path: "/afrify/templates/services/grain",
   },
   {
     name: "Smile Hub",
@@ -58,7 +58,7 @@ const templates = [
     tagline: "Pioneering Excellence in Dental Care",
     features: ["Service Grid", "Opening Hours", "Contact Info"],
     isNew: true,
-    path: "",
+    path: "/afrify/templates/services/smile",
   },
   {
     name: "Panorama",
@@ -69,7 +69,7 @@ const templates = [
     tagline: "Furniture & Interior Design Services",
     features: ["Portfolio", "Category Nav", "Brand Story"],
     isNew: false,
-    path: "",
+    path: "/afrify/templates/services/panorama",
   },
   {
     name: "Printing",
@@ -80,7 +80,7 @@ const templates = [
     tagline: "Your Trusted Print Media Partner",
     features: ["Product Grid", "Category Tabs", "Testimonials"],
     isNew: false,
-    path: "",
+    path: "/afrify/templates/services/printing",
   },
   {
     name: "Sonik",
@@ -91,7 +91,7 @@ const templates = [
     tagline: "Where therapeutic services meet everyday calm",
     features: ["Therapy Cards", "Booking Flow", "Gallery"],
     isNew: false,
-    path: "",
+    path: "/afrify/templates/services/sonik",
   },
   {
     name: "Leap",
@@ -102,7 +102,7 @@ const templates = [
     tagline: "Your marketing shouldn't feel like a guessing game",
     features: ["Service Cards", "Process Steps", "Portfolio"],
     isNew: false,
-    path: "",
+    path: "/afrify/templates/services/leap",
   },
   {
     name: "Aircon",
@@ -113,7 +113,7 @@ const templates = [
     tagline: "Stay Cool, Stay Comfortable Always",
     features: ["Booking Form", "Trust Badges", "Service Areas"],
     isNew: false,
-    path: "",
+    path: "/afrify/templates/services/aircon",
   },
   {
     name: "Tattoo Studio",
@@ -135,7 +135,7 @@ const templates = [
     tagline: "Elevate your everyday style",
     features: ["Lookbook", "Shop Grid", "CTA Banners"],
     isNew: false,
-    path: "",
+    path: "/afrify/templates/services/enthusiast",
   },
 ];
 
