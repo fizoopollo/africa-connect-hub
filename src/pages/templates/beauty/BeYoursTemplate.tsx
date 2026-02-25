@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import UseTemplateButton from "@/components/UseTemplateButton";
 import heroImg from "@/assets/beauty/beyours-hero.jpg";
+import heroVideo from "@/assets/beauty/beyours-hero-video.mp4";
 
 const WARM = "#c8956c";
 const BLUSH = "#f5e6de";
@@ -86,7 +87,15 @@ export default function BeYoursTemplate() {
 
       {/* Hero */}
       <section className="relative w-full" style={{ height: "85vh" }}>
-        <img src={heroImg} alt="Be Yours Beauty" className="w-full h-full object-cover" />
+        <video
+          src={heroVideo}
+          poster={heroImg}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover absolute inset-0"
+        />
         <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/20 to-transparent" />
         <div className="absolute inset-0 flex items-center justify-end">
           <div className="pr-12 md:pr-24 text-right max-w-lg">
