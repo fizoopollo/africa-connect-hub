@@ -51,6 +51,13 @@ import TorqueTemplate from "./pages/templates/auto/TorqueTemplate";
 import FleetTemplate from "./pages/templates/auto/FleetTemplate";
 import NitroTemplate from "./pages/templates/auto/NitroTemplate";
 import DriveTemplate from "./pages/templates/auto/DriveTemplate";
+import BagsTemplate from "./pages/templates/bags/BagsTemplate";
+import CourierTemplate from "./pages/templates/bags/CourierTemplate";
+import PrestigeTemplate from "./pages/templates/bags/PrestigeTemplate";
+import VoyageTemplate from "./pages/templates/bags/VoyageTemplate";
+import ToteTemplate from "./pages/templates/bags/ToteTemplate";
+import LeatherTemplate from "./pages/templates/bags/LeatherTemplate";
+import GalleriaTemplate from "./pages/templates/bags/GalleriaTemplate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -110,6 +117,13 @@ const App = () => (
           <Route path="/afrify/templates/auto/fleet" element={<FleetTemplate />} />
           <Route path="/afrify/templates/auto/nitro" element={<NitroTemplate />} />
           <Route path="/afrify/templates/auto/drive" element={<DriveTemplate />} />
+          <Route path="/afrify/templates/bags" element={<BagsTemplate />} />
+          <Route path="/afrify/templates/bags/courier" element={<CourierTemplate />} />
+          <Route path="/afrify/templates/bags/prestige" element={<PrestigeTemplate />} />
+          <Route path="/afrify/templates/bags/voyage" element={<VoyageTemplate />} />
+          <Route path="/afrify/templates/bags/tote" element={<ToteTemplate />} />
+          <Route path="/afrify/templates/bags/leather" element={<LeatherTemplate />} />
+          <Route path="/afrify/templates/bags/galleria" element={<GalleriaTemplate />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

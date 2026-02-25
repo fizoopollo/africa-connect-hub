@@ -29,6 +29,12 @@ import torqueHero from "@/assets/auto/torque-hero.jpg";
 import fleetHero from "@/assets/auto/fleet-hero.jpg";
 import nitroHero from "@/assets/auto/nitro-hero.jpg";
 import driveHero from "@/assets/auto/drive-hero.jpg";
+import courierBagHero from "@/assets/bags/courier-hero.jpg";
+import prestigeBagHero from "@/assets/bags/prestige-hero.jpg";
+import voyageBagHero from "@/assets/bags/voyage-hero.jpg";
+import toteBagHero from "@/assets/bags/tote-hero.jpg";
+import leatherBagHero from "@/assets/bags/leather-hero.jpg";
+import galleriaBagHero from "@/assets/bags/galleria-hero.jpg";
 import { artTemplates } from "@/data/artTemplates";
 
 // Filter data
@@ -106,6 +112,12 @@ const allTemplates = [
   { name: "Fleet", category: "Auto", image: fleetHero, path: "/afrify/templates/auto/fleet", price: "$100", rating: "96%", tag: "NEW" },
   { name: "Nitro", category: "Auto", image: nitroHero, path: "/afrify/templates/auto/nitro", price: "$320", rating: "100%", tag: "" },
   { name: "Drive", category: "Auto", image: driveHero, path: "/afrify/templates/auto/drive", price: "$320", rating: "92%", tag: "" },
+  { name: "Courier", category: "Bags", image: courierBagHero, path: "/afrify/templates/bags/courier", price: "$400", rating: "99%", tag: "NEW" },
+  { name: "Prestige", category: "Bags", image: prestigeBagHero, path: "/afrify/templates/bags/prestige", price: "$400", rating: "91%", tag: "" },
+  { name: "Voyage", category: "Bags", image: voyageBagHero, path: "/afrify/templates/bags/voyage", price: "$100", rating: "98%", tag: "" },
+  { name: "Tote", category: "Bags", image: toteBagHero, path: "/afrify/templates/bags/tote", price: "$380", rating: "94%", tag: "" },
+  { name: "Leather", category: "Bags", image: leatherBagHero, path: "/afrify/templates/bags/leather", price: "$100", rating: "100%", tag: "" },
+  { name: "Galleria", category: "Bags", image: galleriaBagHero, path: "/afrify/templates/bags/galleria", price: "$300", rating: "99%", tag: "" },
   ...artTemplates.map((t) => ({
     name: t.name,
     category: "Art",
