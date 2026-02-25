@@ -28,6 +28,7 @@ import SonikTemplate from "./pages/templates/services/SonikTemplate";
 import LeapTemplate from "./pages/templates/services/LeapTemplate";
 import AirconTemplate from "./pages/templates/services/AirconTemplate";
 import EnthusiastTemplate from "./pages/templates/services/EnthusiastTemplate";
+import AfrifyTemplatesStore from "./pages/AfrifyTemplatesStore";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/store/analytics" element={<StoreAnalytics />} />
+          <Route path="/afrify/templates-store" element={<AfrifyTemplatesStore />} />
           <Route path="/afrify/templates/fashion" element={<FashionTemplate />} />
           <Route path="/afrify/templates/food" element={<FoodTemplate />} />
           <Route path="/afrify/templates/electronics" element={<ElectronicsTemplate />} />

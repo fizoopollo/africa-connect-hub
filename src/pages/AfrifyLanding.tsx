@@ -4,7 +4,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import {
   LayoutGrid, Palette, Smartphone, ShoppingCart, CreditCard,
-  BarChart3, ArrowRight, Check, Zap, Globe, Package
+  BarChart3, ArrowRight, Check, Zap, Globe, Package, Plus
 } from "lucide-react";
 
 const steps = [
@@ -137,6 +137,22 @@ export default function AfrifyLanding() {
                 </motion.div>
               </Link>
             ))}
+            {/* Browse more "+" card */}
+            <Link to="/afrify/templates-store">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: templates.length * 0.08 }}
+                className="group cursor-pointer"
+              >
+                <div className="h-48 rounded-2xl border-2 border-dashed border-muted-foreground/30 flex items-center justify-center mb-3 group-hover:scale-[1.02] group-hover:border-secondary transition-all duration-300 bg-muted/30">
+                  <Plus className="h-12 w-12 text-muted-foreground/50 group-hover:text-secondary transition-colors" />
+                </div>
+                <h3 className="font-bold">Browse All Templates</h3>
+                <p className="text-sm text-muted-foreground">Explore the store</p>
+              </motion.div>
+            </Link>
           </div>
         </div>
       </section>
