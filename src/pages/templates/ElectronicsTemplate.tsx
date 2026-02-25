@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, ArrowLeft, Star, Zap, Shield, Truck } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const products = [
   { name: "Smartphone Pro 128GB", price: "$299", oldPrice: "$349", rating: 4.7, image: "from-slate-600 to-slate-800", badge: "Hot Deal" },
@@ -22,6 +23,7 @@ const features = [
 export default function ElectronicsTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-blue-600 to-indigo-800 overflow-hidden">
         <div className="container relative text-center">
