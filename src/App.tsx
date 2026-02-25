@@ -43,6 +43,7 @@ import AnthologistTemplate from "./pages/templates/art/AnthologistTemplate";
 import TotemTemplate from "./pages/templates/art/TotemTemplate";
 import DarkroomTemplate from "./pages/templates/art/DarkroomTemplate";
 import ClayTemplate from "./pages/templates/art/ClayTemplate";
+import OkinawaTemplate from "./pages/templates/art/OkinawaTemplate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -93,6 +94,7 @@ const App = () => (
           <Route path="/afrify/templates/art/totem" element={<TotemTemplate />} />
           <Route path="/afrify/templates/art/darkroom" element={<DarkroomTemplate />} />
           <Route path="/afrify/templates/art/clay" element={<ClayTemplate />} />
+          <Route path="/afrify/templates/art/okinawa" element={<OkinawaTemplate />} />
           <Route path="/afrify/templates/art/:slug" element={<ArtTemplatePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
