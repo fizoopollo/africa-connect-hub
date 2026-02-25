@@ -16,12 +16,12 @@ const steps = [
 ];
 
 const templates = [
-  { name: "Fashion Forward", category: "Fashion", color: "from-pink-500 to-rose-500" },
-  { name: "Fresh Market", category: "Food & Grocery", color: "from-emerald-500 to-green-500" },
-  { name: "TechStore Pro", category: "Electronics", color: "from-blue-500 to-indigo-500" },
-  { name: "Artisan Crafts", category: "Handmade", color: "from-amber-500 to-orange-500" },
-  { name: "Service Hub", category: "Services", color: "from-violet-500 to-purple-500" },
-  { name: "Beauty Glow", category: "Beauty", color: "from-rose-400 to-pink-500" },
+  { name: "Fashion Forward", category: "Fashion", color: "from-pink-500 to-rose-500", path: "/afrify/templates/fashion" },
+  { name: "Fresh Market", category: "Food & Grocery", color: "from-emerald-500 to-green-500", path: "/afrify/templates/food" },
+  { name: "TechStore Pro", category: "Electronics", color: "from-blue-500 to-indigo-500", path: "/afrify/templates/electronics" },
+  { name: "Artisan Crafts", category: "Handmade", color: "from-amber-500 to-orange-500", path: "/afrify/templates/handmade" },
+  { name: "Service Hub", category: "Services", color: "from-violet-500 to-purple-500", path: "/afrify/templates/services" },
+  { name: "Beauty Glow", category: "Beauty", color: "from-rose-400 to-pink-500", path: "/afrify/templates/beauty" },
 ];
 
 const plans = [
@@ -121,20 +121,21 @@ export default function AfrifyLanding() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {templates.map((t, i) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="group cursor-pointer"
-              >
-                <div className={`h-48 rounded-2xl bg-gradient-to-br ${t.color} flex items-center justify-center mb-3 group-hover:scale-[1.02] transition-transform duration-300`}>
-                  <LayoutGrid className="h-12 w-12 text-primary-foreground/60" />
-                </div>
-                <h3 className="font-bold">{t.name}</h3>
-                <p className="text-sm text-muted-foreground">{t.category}</p>
-              </motion.div>
+              <Link key={t.name} to={t.path}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="group cursor-pointer"
+                >
+                  <div className={`h-48 rounded-2xl bg-gradient-to-br ${t.color} flex items-center justify-center mb-3 group-hover:scale-[1.02] transition-transform duration-300`}>
+                    <LayoutGrid className="h-12 w-12 text-primary-foreground/60" />
+                  </div>
+                  <h3 className="font-bold">{t.name}</h3>
+                  <p className="text-sm text-muted-foreground">{t.category}</p>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
