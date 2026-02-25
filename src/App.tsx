@@ -9,6 +9,7 @@ import AfrifyLanding from "./pages/AfrifyLanding";
 import LoginPage from "./pages/Login";
 import SignupPage from "./pages/Signup";
 import PricingPage from "./pages/Pricing";
+import StoreAnalytics from "./pages/StoreAnalytics";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/store/analytics" element={<StoreAnalytics />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
