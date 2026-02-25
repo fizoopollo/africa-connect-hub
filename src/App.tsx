@@ -44,6 +44,13 @@ import TotemTemplate from "./pages/templates/art/TotemTemplate";
 import DarkroomTemplate from "./pages/templates/art/DarkroomTemplate";
 import ClayTemplate from "./pages/templates/art/ClayTemplate";
 import OkinawaTemplate from "./pages/templates/art/OkinawaTemplate";
+import AutoTemplate from "./pages/templates/auto/AutoTemplate";
+import MaranelloTemplate from "./pages/templates/auto/MaranelloTemplate";
+import GarageAutoTemplate from "./pages/templates/auto/GarageTemplate";
+import TorqueTemplate from "./pages/templates/auto/TorqueTemplate";
+import FleetTemplate from "./pages/templates/auto/FleetTemplate";
+import NitroTemplate from "./pages/templates/auto/NitroTemplate";
+import DriveTemplate from "./pages/templates/auto/DriveTemplate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -96,6 +103,13 @@ const App = () => (
           <Route path="/afrify/templates/art/clay" element={<ClayTemplate />} />
           <Route path="/afrify/templates/art/okinawa" element={<OkinawaTemplate />} />
           <Route path="/afrify/templates/art/:slug" element={<ArtTemplatePage />} />
+          <Route path="/afrify/templates/auto" element={<AutoTemplate />} />
+          <Route path="/afrify/templates/auto/maranello" element={<MaranelloTemplate />} />
+          <Route path="/afrify/templates/auto/garage" element={<GarageAutoTemplate />} />
+          <Route path="/afrify/templates/auto/torque" element={<TorqueTemplate />} />
+          <Route path="/afrify/templates/auto/fleet" element={<FleetTemplate />} />
+          <Route path="/afrify/templates/auto/nitro" element={<NitroTemplate />} />
+          <Route path="/afrify/templates/auto/drive" element={<DriveTemplate />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
