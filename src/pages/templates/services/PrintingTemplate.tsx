@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Printer, FileText, Image, BookOpen, Star, Package, Truck } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const products = [
   { name: "Business Cards", desc: "Premium quality cards on thick stock", price: "From $29", icon: FileText },
@@ -25,6 +26,7 @@ const testimonials = [
 export default function PrintingTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-24 md:py-36 overflow-hidden">
         <div className="absolute inset-0">

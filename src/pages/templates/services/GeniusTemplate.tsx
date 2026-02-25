@@ -7,6 +7,7 @@ import {
   ArrowLeft, ArrowRight, Phone, Mail, MapPin, Clock,
   Wrench, Paintbrush, Zap, Droplets, Shield, Star, CheckCircle
 } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const services = [
   { icon: Wrench, name: "Plumbing", desc: "Expert plumbing repairs, installations, and maintenance for your home.", price: "From $89" },
@@ -33,6 +34,7 @@ const stats = [
 export default function GeniusTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-24 md:py-36 overflow-hidden" style={{ background: "linear-gradient(135deg, #1a1f71 0%, #2d3694 50%, #4a52c7 100%)" }}>
         <div className="absolute inset-0 opacity-10">

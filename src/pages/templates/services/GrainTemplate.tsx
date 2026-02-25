@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Sparkles, Heart, Users, BookOpen, Star } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const services = [
   { title: "1:1 Coaching", desc: "Personalized sessions tailored to your unique goals and challenges.", price: "$200/session" },
@@ -23,6 +24,7 @@ const pressLogos = ["Forbes", "Inc.", "Goop", "Well+Good", "MindBody"];
 export default function GrainTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #f5f0e8 0%, #ebe4d6 100%)" }}>
         <div className="container relative text-center">

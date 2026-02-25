@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Phone, Fan, Thermometer, Wrench, Shield, Clock, Star, MapPin, CheckCircle } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const services = [
   { icon: Fan, name: "AC Installation", desc: "Professional installation for residential and commercial units.", price: "From $299" },
@@ -19,6 +20,7 @@ const serviceAreas = ["Downtown", "Westside", "East End", "North Hills", "South 
 export default function AirconTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-24 md:py-36 overflow-hidden">
         <div className="absolute inset-0">

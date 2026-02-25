@@ -7,6 +7,7 @@ import {
   ArrowLeft, ArrowRight, Monitor, Shield, Search, Zap,
   Settings, Headphones, Package, BarChart3, CheckCircle
 } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const features = [
   { icon: Shield, title: "Secure Store", desc: "Enterprise-grade security protecting your digital assets and customer data with advanced encryption." },
@@ -30,6 +31,7 @@ const plans = [
 export default function WorkflowTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Top Banner */}
       <div className="bg-foreground text-background text-center py-2 text-sm font-medium">
         ⚡ Scale & Treat Yourself to Efficiency. Free consultation available.
