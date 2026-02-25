@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Heart, ArrowLeft, Star, Sparkles } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const products = [
   { name: "Shea Butter Moisturizer", price: "$18", rating: 4.9, image: "from-amber-200 to-amber-400", tag: "Organic" },
@@ -18,6 +19,7 @@ const products = [
 export default function BeautyTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-rose-400 to-pink-600 overflow-hidden">
         <div className="container relative text-center">

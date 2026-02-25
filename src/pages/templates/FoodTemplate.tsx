@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Clock, MapPin, ArrowLeft, Star, Truck } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const categories = [
   { name: "Fresh Fruits", emoji: "🍎", count: 24 },
@@ -25,6 +26,7 @@ const products = [
 export default function FoodTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-emerald-500 to-green-600 overflow-hidden">
         <div className="container relative text-center">

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Heart, ArrowLeft, Star } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const products = [
   { name: "Hand-Woven Basket", price: "$35", artisan: "Amara K.", image: "from-amber-400 to-orange-500", material: "Sisal & Raffia" },
@@ -16,6 +17,7 @@ const products = [
 export default function HandmadeTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-amber-500 to-orange-600 overflow-hidden">
         <div className="container relative text-center">

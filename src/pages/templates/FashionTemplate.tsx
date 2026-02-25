@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Heart, Star, ArrowLeft, Search, Filter } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const products = [
   { name: "Ankara Maxi Dress", price: "$45", rating: 4.8, reviews: 124, image: "from-pink-400 to-rose-500", tag: "Bestseller" },
@@ -20,6 +21,7 @@ const categories = ["All", "Dresses", "Tops", "Accessories", "Bags", "Shoes", "J
 export default function FashionTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero Banner */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-pink-500 to-rose-600 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')] opacity-30" />
