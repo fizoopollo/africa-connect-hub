@@ -1,3 +1,4 @@
+import printingHero from "@/assets/printing-hero.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
@@ -25,7 +26,11 @@ export default function PrintingTemplate() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-24 md:py-36 overflow-hidden" style={{ background: "linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%)" }}>
+      <section className="relative py-24 md:py-36 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={printingHero} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(30,58,95,0.85), rgba(30,64,175,0.85))" }} />
+        </div>
         <div className="container relative text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium mb-6">

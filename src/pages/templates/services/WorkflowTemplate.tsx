@@ -1,3 +1,4 @@
+import workflowHero from "@/assets/workflow-hero.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
@@ -52,11 +53,8 @@ export default function WorkflowTemplate() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 aspect-[4/3] flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Monitor className="h-20 w-20 mx-auto text-muted-foreground/40 mb-4" />
-                  <p className="text-muted-foreground/60 font-medium">Tech Maintenance Dashboard</p>
-                </div>
+              <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
+                <img src={workflowHero} alt="Tech maintenance workspace" className="w-full h-full object-cover" />
               </div>
             </motion.div>
           </div>

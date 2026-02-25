@@ -1,3 +1,4 @@
+import leapHero from "@/assets/leap-hero.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
@@ -29,7 +30,11 @@ export default function LeapTemplate() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-24 md:py-36 overflow-hidden" style={{ background: "linear-gradient(135deg, #d946ef 0%, #a21caf 50%, #7c3aed 100%)" }}>
+      <section className="relative py-24 md:py-36 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={leapHero} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(217,70,239,0.8), rgba(162,28,175,0.8), rgba(124,58,237,0.8))" }} />
+        </div>
         <div className="absolute inset-0 opacity-20">
           <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-white/20 blur-[100px]" />
         </div>
