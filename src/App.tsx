@@ -33,6 +33,7 @@ import ArtTemplatePage from "./pages/templates/art/ArtTemplatePage";
 import EtchTemplate from "./pages/templates/art/EtchTemplate";
 import BrutalistTemplate from "./pages/templates/art/BrutalistTemplate";
 import SunsetTemplate from "./pages/templates/art/SunsetTemplate";
+import MonochromeTemplate from "./pages/templates/art/MonochromeTemplate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -73,6 +74,7 @@ const App = () => (
           <Route path="/afrify/templates/art/sunset" element={<SunsetTemplate />} />
           <Route path="/afrify/templates/art/brutalist" element={<BrutalistTemplate />} />
           <Route path="/afrify/templates/art/etch" element={<EtchTemplate />} />
+          <Route path="/afrify/templates/art/monochrome" element={<MonochromeTemplate />} />
           <Route path="/afrify/templates/art/:slug" element={<ArtTemplatePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
