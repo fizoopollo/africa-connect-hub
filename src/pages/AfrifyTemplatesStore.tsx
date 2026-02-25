@@ -36,6 +36,7 @@ import toteBagHero from "@/assets/bags/tote-hero.jpg";
 import leatherBagHero from "@/assets/bags/leather-hero.jpg";
 import galleriaBagHero from "@/assets/bags/galleria-hero.jpg";
 import { artTemplates } from "@/data/artTemplates";
+import { beautyTemplates } from "@/data/beautyTemplates";
 
 // Filter data
 const priceOptions = [
@@ -123,6 +124,15 @@ const allTemplates = [
     category: "Art",
     image: t.image,
     path: `/afrify/templates/art/${t.slug}`,
+    price: t.price,
+    rating: t.rating,
+    tag: t.tag,
+  })),
+  ...beautyTemplates.map((t) => ({
+    name: t.name,
+    category: "Beauty",
+    image: t.image,
+    path: `/afrify/templates/beauty/${t.slug}`,
     price: t.price,
     rating: t.rating,
     tag: t.tag,
