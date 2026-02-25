@@ -149,8 +149,8 @@ export default function ServicesTemplate() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
                 className="group cursor-pointer"
+                onClick={() => { if (t.name === "Genius") window.location.href = "/afrify/templates/services/noteable"; }}
               >
-                {/* Preview Card */}
                 <div className={`relative h-56 rounded-2xl bg-gradient-to-br ${t.gradient} overflow-hidden mb-4`}>
                   {/* Simulated browser chrome */}
                   <div className="absolute top-0 inset-x-0 h-7 bg-black/20 backdrop-blur-sm flex items-center px-3 gap-1.5">
