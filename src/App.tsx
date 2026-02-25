@@ -17,6 +17,7 @@ import HandmadeTemplate from "./pages/templates/HandmadeTemplate";
 import ServicesTemplate from "./pages/templates/ServicesTemplate";
 import BeautyTemplate from "./pages/templates/BeautyTemplate";
 import NoteableTemplate from "./pages/templates/services/NoteableTemplate";
+import TattooTemplate from "./pages/templates/services/TattooTemplate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/afrify/templates/services" element={<ServicesTemplate />} />
           <Route path="/afrify/templates/beauty" element={<BeautyTemplate />} />
           <Route path="/afrify/templates/services/noteable" element={<NoteableTemplate />} />
+          <Route path="/afrify/templates/services/tattoo" element={<TattooTemplate />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
