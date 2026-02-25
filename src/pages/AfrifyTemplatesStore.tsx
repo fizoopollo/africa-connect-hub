@@ -216,7 +216,7 @@ export default function AfrifyTemplatesStore() {
 
         <div className="flex gap-10">
           {/* Sidebar */}
-          <aside className="hidden md:block w-64 shrink-0">
+          <aside className="hidden md:block w-64 shrink-0 sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto">
             <h1 className="text-2xl font-black mb-4">Browse themes</h1>
 
             {/* Active filters */}
