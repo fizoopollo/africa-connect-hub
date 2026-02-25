@@ -23,6 +23,12 @@ import leapHero from "@/assets/leap-hero.jpg";
 import airconHero from "@/assets/aircon-hero.jpg";
 import enthusiastHero from "@/assets/enthusiast-hero.jpg";
 import tattooHero from "@/assets/tattoo-hero.jpg";
+import canvasHero from "@/assets/canvas-hero.jpg";
+import paletteHero from "@/assets/palette-hero.jpg";
+import sculptHero from "@/assets/sculpt-hero.jpg";
+import shutterHero from "@/assets/shutter-hero.jpg";
+import pixelHero from "@/assets/pixel-hero.jpg";
+import artisanHero from "@/assets/artisan-hero.jpg";
 
 // Filter data
 const priceOptions = [
@@ -93,6 +99,12 @@ const allTemplates = [
   { name: "Aircon", category: "Services", image: airconHero, path: "/afrify/templates/services/aircon", price: "$320", rating: "100%", tag: "" },
   { name: "Tattoo", category: "Services", image: tattooHero, path: "/afrify/templates/services/tattoo", price: "$320", rating: "100%", tag: "" },
   { name: "Enthusiast", category: "Services", image: enthusiastHero, path: "/afrify/templates/services/enthusiast", price: "$300", rating: "100%", tag: "" },
+  { name: "Canvas", category: "Art", image: canvasHero, path: "/afrify/templates/art/canvas", price: "$350", rating: "95%", tag: "NEW" },
+  { name: "Palette", category: "Art", image: paletteHero, path: "/afrify/templates/art/palette", price: "$280", rating: "92%", tag: "" },
+  { name: "Sculpt", category: "Art", image: sculptHero, path: "/afrify/templates/art/sculpt", price: "$320", rating: "98%", tag: "" },
+  { name: "Shutter", category: "Art", image: shutterHero, path: "/afrify/templates/art/shutter", price: "$290", rating: "100%", tag: "" },
+  { name: "Pixel", category: "Art", image: pixelHero, path: "/afrify/templates/art/pixel", price: "$260", rating: "89%", tag: "" },
+  { name: "Artisan", category: "Art", image: artisanHero, path: "/afrify/templates/art/artisan", price: "$310", rating: "96%", tag: "" },
 ];
 
 type FilterSection = {
