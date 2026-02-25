@@ -38,6 +38,7 @@ import MioTemplate from "./pages/templates/art/MioTemplate";
 import ExhibitTemplate from "./pages/templates/art/ExhibitTemplate";
 import PortfolioTemplate from "./pages/templates/art/PortfolioTemplate";
 import WrongTemplate from "./pages/templates/art/WrongTemplate";
+import OceanTemplate from "./pages/templates/art/OceanTemplate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -83,6 +84,7 @@ const App = () => (
           <Route path="/afrify/templates/art/exhibit" element={<ExhibitTemplate />} />
           <Route path="/afrify/templates/art/portfolio" element={<PortfolioTemplate />} />
           <Route path="/afrify/templates/art/wrong" element={<WrongTemplate />} />
+          <Route path="/afrify/templates/art/ocean" element={<OceanTemplate />} />
           <Route path="/afrify/templates/art/:slug" element={<ArtTemplatePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
