@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Leaf, Droplets, Wind, Heart, Clock, Star, Phone } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const therapies = [
   { name: "Deep Tissue Massage", duration: "60 min", price: "$120", desc: "Targeted relief for chronic tension and deep muscle knots." },
@@ -23,6 +24,7 @@ const values = [
 export default function SonikTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #1a3a2a 0%, #0f2e1f 100%)" }}>
         <div className="absolute inset-0 opacity-20">

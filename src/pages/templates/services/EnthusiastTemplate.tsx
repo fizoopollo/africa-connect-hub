@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, ShoppingBag, Star, Eye, Heart, Sparkles } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const lookbook = [
   { title: "Summer Glow Collection", tag: "New Season", gradient: "from-amber-200 to-orange-200" },
@@ -23,6 +24,7 @@ const products = [
 export default function EnthusiastTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%)" }}>
         <div className="container relative text-center">

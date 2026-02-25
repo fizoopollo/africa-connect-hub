@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Phone, Clock, MapPin, Heart, Shield, Smile, Star, CheckCircle } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const services = [
   { name: "General Dentistry", desc: "Comprehensive check-ups, cleanings, fillings, and preventive care.", icon: Smile },
@@ -23,6 +24,7 @@ const team = [
 export default function SmileTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-24 md:py-36 overflow-hidden">
         <div className="absolute inset-0">

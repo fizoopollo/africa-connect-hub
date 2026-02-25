@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Sofa, Lamp, PenTool, Palette, Eye, Star } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const categories = [
   { name: "Living Room", count: 48 },
@@ -25,6 +26,7 @@ const portfolio = [
 export default function PanoramaTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-28 md:py-40 overflow-hidden" style={{ background: "#1a1a1a" }}>
         <div className="container relative">

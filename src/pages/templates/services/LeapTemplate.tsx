@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Megaphone, BarChart3, PenTool, Globe, Target, Rocket, Star, CheckCircle } from "lucide-react";
+import UseTemplateButton from "@/components/UseTemplateButton";
 
 const services = [
   { icon: Megaphone, title: "Brand Strategy", desc: "Define your unique position and build a brand that resonates with your audience." },
@@ -29,6 +30,7 @@ const stats = [
 export default function LeapTemplate() {
   return (
     <PageLayout>
+      <UseTemplateButton />
       {/* Hero */}
       <section className="relative py-24 md:py-36 overflow-hidden">
         <div className="absolute inset-0">
