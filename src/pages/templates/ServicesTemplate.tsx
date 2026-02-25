@@ -149,7 +149,10 @@ export default function ServicesTemplate() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
                 className="group cursor-pointer"
-                onClick={() => { if (t.name === "Genius") window.location.href = "/afrify/templates/services/noteable"; }}
+                onClick={() => { 
+                  if (t.name === "Genius") window.location.href = "/afrify/templates/services/noteable";
+                  if (t.name === "Tattoo Studio") window.location.href = "/afrify/templates/services/tattoo";
+                }}
               >
                 <div className={`relative h-56 rounded-2xl bg-gradient-to-br ${t.gradient} overflow-hidden mb-4`}>
                   {/* Simulated browser chrome */}
