@@ -2,15 +2,109 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Star, Clock, MapPin, Calendar, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ThumbsUp, Star, Eye } from "lucide-react";
 
-const services = [
-  { name: "Home Cleaning", price: "From $30", duration: "2-4 hrs", rating: 4.9, reviews: 234, image: "from-blue-400 to-cyan-500", available: true },
-  { name: "Plumbing Repair", price: "From $50", duration: "1-3 hrs", rating: 4.7, reviews: 189, image: "from-slate-500 to-slate-700", available: true },
-  { name: "Hair Braiding", price: "From $25", duration: "2-5 hrs", rating: 4.8, reviews: 412, image: "from-purple-400 to-violet-600", available: false },
-  { name: "Catering Services", price: "From $200", duration: "Custom", rating: 4.9, reviews: 97, image: "from-amber-400 to-orange-500", available: true },
-  { name: "Photography", price: "From $80", duration: "1-8 hrs", rating: 4.6, reviews: 156, image: "from-rose-400 to-pink-500", available: true },
-  { name: "Tutoring", price: "From $15/hr", duration: "Flexible", rating: 4.8, reviews: 301, image: "from-emerald-400 to-green-600", available: true },
+const templates = [
+  {
+    name: "Genius",
+    category: "Home Services",
+    price: "$210",
+    rating: 100,
+    gradient: "from-blue-500 to-indigo-600",
+    tagline: "Home Services at Your Doorstep",
+    features: ["Booking System", "Service Listings", "Client Logos"],
+    isNew: false,
+  },
+  {
+    name: "Sonik",
+    category: "Spa & Wellness",
+    price: "$270",
+    rating: 100,
+    gradient: "from-green-700 to-emerald-900",
+    tagline: "Where therapeutic services meet everyday calm",
+    features: ["Therapy Cards", "Booking Flow", "Gallery"],
+    isNew: false,
+  },
+  {
+    name: "Smile Hub",
+    category: "Dental & Health",
+    price: "$290",
+    rating: 100,
+    gradient: "from-teal-400 to-cyan-600",
+    tagline: "Pioneering Excellence in Dental Care",
+    features: ["Service Grid", "Opening Hours", "Contact Info"],
+    isNew: true,
+  },
+  {
+    name: "Panorama",
+    category: "Interior Design",
+    price: "$290",
+    rating: 100,
+    gradient: "from-stone-600 to-stone-900",
+    tagline: "Furniture & Interior Design Services",
+    features: ["Portfolio", "Category Nav", "Brand Story"],
+    isNew: false,
+  },
+  {
+    name: "Aircon",
+    category: "HVAC & Maintenance",
+    price: "$320",
+    rating: 100,
+    gradient: "from-green-500 to-green-700",
+    tagline: "Stay Cool, Stay Comfortable Always",
+    features: ["Booking Form", "Trust Badges", "Service Areas"],
+    isNew: false,
+  },
+  {
+    name: "Enthusiast",
+    category: "Beauty & Lifestyle",
+    price: "$300",
+    rating: 100,
+    gradient: "from-amber-300 to-amber-500",
+    tagline: "Elevate your everyday style",
+    features: ["Lookbook", "Shop Grid", "CTA Banners"],
+    isNew: false,
+  },
+  {
+    name: "Tattoo Studio",
+    category: "Tattoo & Body Art",
+    price: "$320",
+    rating: 100,
+    gradient: "from-red-600 to-red-900",
+    tagline: "Ink That Tells Your Story",
+    features: ["Gallery Grid", "Artist Profiles", "Promo Banners"],
+    isNew: false,
+  },
+  {
+    name: "Leap",
+    category: "Marketing Agency",
+    price: "$350",
+    rating: 91,
+    gradient: "from-pink-400 to-fuchsia-600",
+    tagline: "Your marketing shouldn't feel like a guessing game",
+    features: ["Service Cards", "Process Steps", "Portfolio"],
+    isNew: false,
+  },
+  {
+    name: "Printing",
+    category: "Print & Media",
+    price: "$320",
+    rating: 100,
+    gradient: "from-blue-600 to-blue-800",
+    tagline: "Your Trusted Print Media Partner",
+    features: ["Product Grid", "Category Tabs", "Testimonials"],
+    isNew: false,
+  },
+  {
+    name: "Flow",
+    category: "Coaching & Consulting",
+    price: "$380",
+    rating: 91,
+    gradient: "from-stone-400 to-stone-600",
+    tagline: "Meet Your New Clarity Coach",
+    features: ["About Section", "Press Logos", "Service Tiers"],
+    isNew: false,
+  },
 ];
 
 export default function ServicesTemplate() {
@@ -18,60 +112,96 @@ export default function ServicesTemplate() {
     <PageLayout>
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-violet-500 to-purple-700 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_60%)]" />
         <div className="container relative text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-6xl font-black text-primary-foreground mb-4">
-              Service Hub
+              Service Templates
             </h1>
             <p className="text-lg text-primary-foreground/80 max-w-xl mx-auto mb-8">
-              Book trusted local professionals in minutes
+              Professional templates for every service business — from salons to agencies
             </p>
             <Link to="/afrify">
               <Button variant="ghost" className="text-primary-foreground hover:bg-primary-foreground/10">
-                <ArrowLeft className="h-4 w-4" /> Back to Templates
+                <ArrowLeft className="h-4 w-4" /> Back to Afrify
               </Button>
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Template Grid */}
       <section className="py-16">
         <div className="container">
-          <h2 className="text-2xl font-black mb-8">Available Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
+          <div className="flex items-center justify-between mb-10">
+            <div>
+              <h2 className="text-2xl font-black mb-1">Browse Templates</h2>
+              <p className="text-muted-foreground">{templates.length} service templates available</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {templates.map((t, i) => (
               <motion.div
-                key={service.name}
+                key={t.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="bg-card rounded-2xl border border-border overflow-hidden"
+                transition={{ delay: i * 0.06 }}
+                className="group cursor-pointer"
               >
-                <div className={`relative h-40 bg-gradient-to-br ${service.image}`}>
-                  {service.available ? (
-                    <span className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full">
-                      <CheckCircle2 className="h-3 w-3" /> Available
-                    </span>
-                  ) : (
-                    <span className="absolute top-3 right-3 px-2 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full">
-                      Fully Booked
+                {/* Preview Card */}
+                <div className={`relative h-56 rounded-2xl bg-gradient-to-br ${t.gradient} overflow-hidden mb-4`}>
+                  {/* Simulated browser chrome */}
+                  <div className="absolute top-0 inset-x-0 h-7 bg-black/20 backdrop-blur-sm flex items-center px-3 gap-1.5">
+                    <span className="h-2 w-2 rounded-full bg-white/30" />
+                    <span className="h-2 w-2 rounded-full bg-white/30" />
+                    <span className="h-2 w-2 rounded-full bg-white/30" />
+                    <span className="ml-2 text-[10px] text-white/50 font-mono truncate">{t.name.toLowerCase().replace(/\s/g, "")}.afrify.store</span>
+                  </div>
+
+                  {/* Content preview */}
+                  <div className="absolute inset-0 pt-10 px-5 pb-5 flex flex-col justify-end">
+                    <p className="text-white/70 text-xs font-medium mb-1">{t.category}</p>
+                    <p className="text-white font-bold text-sm leading-snug max-w-[200px]">{t.tagline}</p>
+                  </div>
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <Button size="sm" variant="secondary" className="shadow-lg">
+                      <Eye className="h-4 w-4" /> Preview
+                    </Button>
+                  </div>
+
+                  {/* Badges */}
+                  {t.isNew && (
+                    <span className="absolute top-9 right-3 px-2 py-0.5 bg-primary text-primary-foreground text-[10px] font-bold rounded-full uppercase tracking-wider">
+                      New
                     </span>
                   )}
                 </div>
-                <div className="p-5">
-                  <h3 className="font-bold text-lg mb-1">{service.name}</h3>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground mb-3">
-                    <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {service.duration}</span>
-                    <span className="flex items-center gap-1"><Star className="h-3.5 w-3.5 fill-accent text-accent" /> {service.rating} ({service.reviews})</span>
+
+                {/* Info */}
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="font-bold text-lg">{t.name}</h3>
+                    <p className="text-sm text-muted-foreground">{t.category}</p>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg font-bold">{service.price}</span>
-                    <Button size="sm" disabled={!service.available}>
-                      <Calendar className="h-4 w-4" /> Book Now
-                    </Button>
+                  <div className="text-right">
+                    <span className="font-bold">{t.price}</span>
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
+                      <ThumbsUp className="h-3 w-3" /> {t.rating}%
+                    </div>
                   </div>
+                </div>
+
+                {/* Feature tags */}
+                <div className="flex flex-wrap gap-1.5 mt-2">
+                  {t.features.map((f) => (
+                    <span key={f} className="text-[11px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
+                      {f}
+                    </span>
+                  ))}
                 </div>
               </motion.div>
             ))}
