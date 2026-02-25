@@ -23,6 +23,12 @@ import leapHero from "@/assets/leap-hero.jpg";
 import airconHero from "@/assets/aircon-hero.jpg";
 import enthusiastHero from "@/assets/enthusiast-hero.jpg";
 import tattooHero from "@/assets/tattoo-hero.jpg";
+import maranelloHero from "@/assets/auto/maranello-hero.jpg";
+import garageHero from "@/assets/auto/garage-hero.jpg";
+import torqueHero from "@/assets/auto/torque-hero.jpg";
+import fleetHero from "@/assets/auto/fleet-hero.jpg";
+import nitroHero from "@/assets/auto/nitro-hero.jpg";
+import driveHero from "@/assets/auto/drive-hero.jpg";
 import { artTemplates } from "@/data/artTemplates";
 
 // Filter data
@@ -94,6 +100,12 @@ const allTemplates = [
   { name: "Aircon", category: "Services", image: airconHero, path: "/afrify/templates/services/aircon", price: "$320", rating: "100%", tag: "" },
   { name: "Tattoo", category: "Services", image: tattooHero, path: "/afrify/templates/services/tattoo", price: "$320", rating: "100%", tag: "" },
   { name: "Enthusiast", category: "Services", image: enthusiastHero, path: "/afrify/templates/services/enthusiast", price: "$300", rating: "100%", tag: "" },
+  { name: "Maranello", category: "Auto", image: maranelloHero, path: "/afrify/templates/auto/maranello", price: "$300", rating: "100%", tag: "NEW" },
+  { name: "Garage", category: "Auto", image: garageHero, path: "/afrify/templates/auto/garage", price: "$170", rating: "98%", tag: "" },
+  { name: "Torque", category: "Auto", image: torqueHero, path: "/afrify/templates/auto/torque", price: "$250", rating: "100%", tag: "" },
+  { name: "Fleet", category: "Auto", image: fleetHero, path: "/afrify/templates/auto/fleet", price: "$100", rating: "96%", tag: "NEW" },
+  { name: "Nitro", category: "Auto", image: nitroHero, path: "/afrify/templates/auto/nitro", price: "$320", rating: "100%", tag: "" },
+  { name: "Drive", category: "Auto", image: driveHero, path: "/afrify/templates/auto/drive", price: "$320", rating: "92%", tag: "" },
   ...artTemplates.map((t) => ({
     name: t.name,
     category: "Art",
