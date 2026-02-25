@@ -120,39 +120,37 @@ export default function AfrifyLanding() {
             <p className="text-muted-foreground text-lg">Start with a design, make it yours</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {templates.map((t, i) => (
-              <Link key={t.name} to={t.path}>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="group cursor-pointer"
-                >
-                  <div className={`h-48 rounded-2xl bg-gradient-to-br ${t.color} flex items-center justify-center mb-3 group-hover:scale-[1.02] transition-transform duration-300`}>
-                    <LayoutGrid className="h-12 w-12 text-primary-foreground/60" />
-                  </div>
-                  <h3 className="font-bold">{t.name}</h3>
-                  <p className="text-sm text-muted-foreground">{t.category}</p>
-                </motion.div>
-              </Link>
-            ))}
-            {/* Browse more "+" card */}
-            <Link to="/afrify/templates-store">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: templates.length * 0.08 }}
-                className="group cursor-pointer"
-              >
-                <div className="h-48 rounded-2xl border-2 border-dashed border-muted-foreground/30 flex items-center justify-center mb-3 group-hover:scale-[1.02] group-hover:border-secondary transition-all duration-300 bg-muted/30">
-                  <Plus className="h-12 w-12 text-muted-foreground/50 group-hover:text-secondary transition-colors" />
-                </div>
-                <h3 className="font-bold">Browse All Templates</h3>
-                <p className="text-sm text-muted-foreground">Explore the store</p>
-              </motion.div>
-            </Link>
+            {templates.map((t, i) => {
+              const isLast = i === templates.length - 1;
+              return (
+                <Link key={t.name} to={t.path}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="group cursor-pointer relative"
+                  >
+                    <div className={`h-48 rounded-2xl bg-gradient-to-br ${t.color} flex items-center justify-center mb-3 group-hover:scale-[1.02] transition-transform duration-300 relative overflow-hidden`}>
+                      <LayoutGrid className="h-12 w-12 text-primary-foreground/60" />
+                      {isLast && (
+                        <Link
+                          to="/afrify/templates-store"
+                          onClick={(e) => e.stopPropagation()}
+                          className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-colors opacity-0 group-hover:opacity-100 z-10"
+                        >
+                          <div className="h-12 w-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                            <Plus className="h-6 w-6 text-foreground" />
+                          </div>
+                        </Link>
+                      )}
+                    </div>
+                    <h3 className="font-bold">{t.name}</h3>
+                    <p className="text-sm text-muted-foreground">{t.category}</p>
+                  </motion.div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
