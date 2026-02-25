@@ -31,6 +31,7 @@ import EnthusiastTemplate from "./pages/templates/services/EnthusiastTemplate";
 import AfrifyTemplatesStore from "./pages/AfrifyTemplatesStore";
 import ArtTemplatePage from "./pages/templates/art/ArtTemplatePage";
 import EtchTemplate from "./pages/templates/art/EtchTemplate";
+import BrutalistTemplate from "./pages/templates/art/BrutalistTemplate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -68,6 +69,7 @@ const App = () => (
           <Route path="/afrify/templates/services/leap" element={<LeapTemplate />} />
           <Route path="/afrify/templates/services/aircon" element={<AirconTemplate />} />
           <Route path="/afrify/templates/services/enthusiast" element={<EnthusiastTemplate />} />
+          <Route path="/afrify/templates/art/brutalist" element={<BrutalistTemplate />} />
           <Route path="/afrify/templates/art/etch" element={<EtchTemplate />} />
           <Route path="/afrify/templates/art/:slug" element={<ArtTemplatePage />} />
           <Route path="*" element={<NotFound />} />
