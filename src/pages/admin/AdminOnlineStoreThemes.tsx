@@ -4,38 +4,18 @@ import { Button } from "@/components/ui/button";
 import { artTemplates } from "@/data/artTemplates";
 import { beautyTemplates } from "@/data/beautyTemplates";
 
-// Service templates
 const serviceTemplates = [
-  { name: "Noteable", slug: "noteable", image: "", price: "Free", category: "Services" },
-  { name: "Tattoo Studio", slug: "tattoo", image: "", price: "Free", category: "Services" },
-  { name: "Genius", slug: "genius", image: "", price: "Free", category: "Services" },
-  { name: "Workflow", slug: "workflow", image: "", price: "Free", category: "Services" },
-  { name: "Grain", slug: "grain", image: "", price: "Free", category: "Services" },
-  { name: "Smile Hub", slug: "smile", image: "", price: "Free", category: "Services" },
-  { name: "Panorama", slug: "panorama", image: "", price: "Free", category: "Services" },
-  { name: "Printing", slug: "printing", image: "", price: "Free", category: "Services" },
-  { name: "Sonik", slug: "sonik", image: "", price: "Free", category: "Services" },
-  { name: "Leap", slug: "leap", image: "", price: "Free", category: "Services" },
-  { name: "Aircon", slug: "aircon", image: "", price: "Free", category: "Services" },
-  { name: "Enthusiast", slug: "enthusiast", image: "", price: "Free", category: "Services" },
+  { name: "Noteable", slug: "noteable", price: "Free" },
+  { name: "Tattoo Studio", slug: "tattoo", price: "Free" },
+  { name: "Genius", slug: "genius", price: "Free" },
 ];
 
 const autoTemplates = [
   { name: "Maranello", slug: "maranello", price: "Free" },
-  { name: "Garage", slug: "garage", price: "Free" },
-  { name: "Torque", slug: "torque", price: "Free" },
-  { name: "Fleet", slug: "fleet", price: "Free" },
-  { name: "Nitro", slug: "nitro", price: "Free" },
-  { name: "Drive", slug: "drive", price: "Free" },
 ];
 
 const bagsTemplates = [
   { name: "Courier", slug: "courier", price: "Free" },
-  { name: "Prestige", slug: "prestige", price: "Free" },
-  { name: "Voyage", slug: "voyage", price: "Free" },
-  { name: "Tote", slug: "tote", price: "Free" },
-  { name: "Leather", slug: "leather", price: "Free" },
-  { name: "Galleria", slug: "galleria", price: "Free" },
 ];
 
 const currentTheme = {
@@ -47,60 +27,23 @@ const currentTheme = {
 
 type ThemeCard = { name: string; image: string; price: string; href: string; rating?: string };
 
-function buildThemeList(): { category: string; themes: ThemeCard[] }[] {
-  return [
-    {
-      category: "Art",
-      themes: artTemplates.map((t) => ({
-        name: t.name,
-        image: t.image,
-        price: t.price,
-        rating: t.rating,
-        href: `/afrify/templates/art/${t.slug}`,
-      })),
-    },
-    {
-      category: "Beauty",
-      themes: beautyTemplates.map((t) => ({
-        name: t.name,
-        image: t.image,
-        price: t.price,
-        rating: t.rating,
-        href: `/afrify/templates/beauty/${t.slug}`,
-      })),
-    },
-    {
-      category: "Services",
-      themes: serviceTemplates.map((t) => ({
-        name: t.name,
-        image: "",
-        price: t.price,
-        href: `/afrify/templates/services/${t.slug}`,
-      })),
-    },
-    {
-      category: "Auto",
-      themes: autoTemplates.map((t) => ({
-        name: t.name,
-        image: "",
-        price: t.price,
-        href: `/afrify/templates/auto/${t.slug}`,
-      })),
-    },
-    {
-      category: "Bags",
-      themes: bagsTemplates.map((t) => ({
-        name: t.name,
-        image: "",
-        price: t.price,
-        href: `/afrify/templates/bags/${t.slug}`,
-      })),
-    },
+function buildThemeList(): ThemeCard[] {
+  const all: ThemeCard[] = [
+    ...artTemplates.slice(0, 4).map((t) => ({
+      name: t.name, image: t.image, price: t.price, rating: t.rating, href: `/afrify/templates/art/${t.slug}`,
+    })),
+    ...beautyTemplates.slice(0, 3).map((t) => ({
+      name: t.name, image: t.image, price: t.price, rating: t.rating, href: `/afrify/templates/beauty/${t.slug}`,
+    })),
+    ...serviceTemplates.map((t) => ({
+      name: t.name, image: "", price: t.price, href: `/afrify/templates/services/${t.slug}`,
+    })),
   ];
+  return all.slice(0, 10);
 }
 
 export default function AdminOnlineStoreThemes() {
-  const categories = buildThemeList();
+  const themes = buildThemeList();
 
   return (
     <div className="max-w-5xl mx-auto">
@@ -151,40 +94,41 @@ export default function AdminOnlineStoreThemes() {
         </div>
       </div>
 
-      {/* Theme library by category */}
-      {categories.map((cat) => (
-        <div key={cat.category} className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-bold">{cat.category} <span className="text-sm font-normal text-muted-foreground">({cat.themes.length} themes)</span></h2>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {cat.themes.map((theme) => (
-              <Link
-                key={theme.name}
-                to={theme.href}
-                className="bg-card rounded-xl border border-border overflow-hidden group hover:shadow-md transition-shadow"
-              >
-                <div className="aspect-[4/3] bg-muted flex items-center justify-center overflow-hidden">
-                  {theme.image ? (
-                    <img src={theme.image} alt={theme.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                  ) : (
-                    <span className="text-2xl font-bold text-muted-foreground/30">{theme.name[0]}</span>
-                  )}
-                </div>
-                <div className="p-3">
-                  <div className="flex items-center justify-between mb-0.5">
-                    <h3 className="font-semibold text-sm">{theme.name}</h3>
-                    <span className="text-xs text-muted-foreground">{theme.price}</span>
-                  </div>
-                  {theme.rating && (
-                    <span className="text-xs text-muted-foreground">{theme.rating} rating</span>
-                  )}
-                </div>
-              </Link>
-            ))}
-          </div>
+      {/* Theme library – horizontal scroll */}
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-bold">Theme library <span className="text-sm font-normal text-muted-foreground">({themes.length} themes)</span></h2>
+          <Link to="/afrify/templates-store">
+            <Button variant="outline" size="sm"><Plus className="h-4 w-4 mr-1" /> Explore more</Button>
+          </Link>
         </div>
-      ))}
+        <div className="flex gap-4 overflow-x-auto pb-4">
+          {themes.map((theme) => (
+            <Link
+              key={theme.name}
+              to={theme.href}
+              className="bg-card rounded-xl border border-border overflow-hidden group hover:shadow-md transition-shadow flex-shrink-0 w-48"
+            >
+              <div className="aspect-[4/3] bg-muted flex items-center justify-center overflow-hidden">
+                {theme.image ? (
+                  <img src={theme.image} alt={theme.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                ) : (
+                  <span className="text-2xl font-bold text-muted-foreground/30">{theme.name[0]}</span>
+                )}
+              </div>
+              <div className="p-3">
+                <div className="flex items-center justify-between mb-0.5">
+                  <h3 className="font-semibold text-sm truncate">{theme.name}</h3>
+                  <span className="text-xs text-muted-foreground">{theme.price}</span>
+                </div>
+                {theme.rating && (
+                  <span className="text-xs text-muted-foreground">{theme.rating} rating</span>
+                )}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
