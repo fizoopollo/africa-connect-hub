@@ -1,6 +1,42 @@
 import { Link } from "react-router-dom";
-import { Palette, Eye, MoreHorizontal, Upload, Plus } from "lucide-react";
+import { Eye, MoreHorizontal, Upload, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { artTemplates } from "@/data/artTemplates";
+import { beautyTemplates } from "@/data/beautyTemplates";
+
+// Service templates
+const serviceTemplates = [
+  { name: "Noteable", slug: "noteable", image: "", price: "Free", category: "Services" },
+  { name: "Tattoo Studio", slug: "tattoo", image: "", price: "Free", category: "Services" },
+  { name: "Genius", slug: "genius", image: "", price: "Free", category: "Services" },
+  { name: "Workflow", slug: "workflow", image: "", price: "Free", category: "Services" },
+  { name: "Grain", slug: "grain", image: "", price: "Free", category: "Services" },
+  { name: "Smile Hub", slug: "smile", image: "", price: "Free", category: "Services" },
+  { name: "Panorama", slug: "panorama", image: "", price: "Free", category: "Services" },
+  { name: "Printing", slug: "printing", image: "", price: "Free", category: "Services" },
+  { name: "Sonik", slug: "sonik", image: "", price: "Free", category: "Services" },
+  { name: "Leap", slug: "leap", image: "", price: "Free", category: "Services" },
+  { name: "Aircon", slug: "aircon", image: "", price: "Free", category: "Services" },
+  { name: "Enthusiast", slug: "enthusiast", image: "", price: "Free", category: "Services" },
+];
+
+const autoTemplates = [
+  { name: "Maranello", slug: "maranello", price: "Free" },
+  { name: "Garage", slug: "garage", price: "Free" },
+  { name: "Torque", slug: "torque", price: "Free" },
+  { name: "Fleet", slug: "fleet", price: "Free" },
+  { name: "Nitro", slug: "nitro", price: "Free" },
+  { name: "Drive", slug: "drive", price: "Free" },
+];
+
+const bagsTemplates = [
+  { name: "Courier", slug: "courier", price: "Free" },
+  { name: "Prestige", slug: "prestige", price: "Free" },
+  { name: "Voyage", slug: "voyage", price: "Free" },
+  { name: "Tote", slug: "tote", price: "Free" },
+  { name: "Leather", slug: "leather", price: "Free" },
+  { name: "Galleria", slug: "galleria", price: "Free" },
+];
 
 const currentTheme = {
   name: "Dawn",
@@ -9,18 +45,65 @@ const currentTheme = {
   lastSaved: "2 hours ago",
 };
 
-const themeLibrary = [
-  { name: "Craft", style: "Minimal & clean", price: "Free" },
-  { name: "Refresh", style: "Bold & modern", price: "Free" },
-  { name: "Sense", style: "Warm & natural", price: "Free" },
-  { name: "Ride", style: "Dynamic & sporty", price: "$350" },
-  { name: "Prestige", style: "Elegant & premium", price: "$350" },
-  { name: "Impact", style: "High-converting", price: "$350" },
-];
+type ThemeCard = { name: string; image: string; price: string; href: string; rating?: string };
+
+function buildThemeList(): { category: string; themes: ThemeCard[] }[] {
+  return [
+    {
+      category: "Art",
+      themes: artTemplates.map((t) => ({
+        name: t.name,
+        image: t.image,
+        price: t.price,
+        rating: t.rating,
+        href: `/afrify/templates/art/${t.slug}`,
+      })),
+    },
+    {
+      category: "Beauty",
+      themes: beautyTemplates.map((t) => ({
+        name: t.name,
+        image: t.image,
+        price: t.price,
+        rating: t.rating,
+        href: `/afrify/templates/beauty/${t.slug}`,
+      })),
+    },
+    {
+      category: "Services",
+      themes: serviceTemplates.map((t) => ({
+        name: t.name,
+        image: "",
+        price: t.price,
+        href: `/afrify/templates/services/${t.slug}`,
+      })),
+    },
+    {
+      category: "Auto",
+      themes: autoTemplates.map((t) => ({
+        name: t.name,
+        image: "",
+        price: t.price,
+        href: `/afrify/templates/auto/${t.slug}`,
+      })),
+    },
+    {
+      category: "Bags",
+      themes: bagsTemplates.map((t) => ({
+        name: t.name,
+        image: "",
+        price: t.price,
+        href: `/afrify/templates/bags/${t.slug}`,
+      })),
+    },
+  ];
+}
 
 export default function AdminOnlineStoreThemes() {
+  const categories = buildThemeList();
+
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-5xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold">Themes</h1>
@@ -40,14 +123,11 @@ export default function AdminOnlineStoreThemes() {
           <h2 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider">Current theme</h2>
         </div>
         <div className="flex flex-col md:flex-row">
-          {/* Preview */}
-          <div className="md:w-80 bg-muted aspect-[4/3] md:aspect-auto flex items-center justify-center border-b md:border-b-0 md:border-r border-border">
-            <div className="text-center">
-              <Palette className="h-10 w-10 text-muted-foreground mx-auto mb-2" />
-              <p className="text-sm text-muted-foreground">Theme preview</p>
-            </div>
+          <div className="md:w-80 bg-muted aspect-[4/3] md:aspect-auto flex items-center justify-center border-b md:border-b-0 md:border-r border-border overflow-hidden">
+            {artTemplates[0] && (
+              <img src={artTemplates[0].image} alt={artTemplates[0].name} className="w-full h-full object-cover" />
+            )}
           </div>
-          {/* Details */}
           <div className="flex-1 p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
@@ -71,31 +151,40 @@ export default function AdminOnlineStoreThemes() {
         </div>
       </div>
 
-      {/* Theme library */}
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-bold">Theme library</h2>
-          <Link to="/afrify/templates-store" className="text-sm text-primary font-medium hover:underline">
-            Visit Theme Store →
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {themeLibrary.map((theme) => (
-            <div key={theme.name} className="bg-card rounded-xl border border-border overflow-hidden group hover:shadow-md transition-shadow">
-              <div className="aspect-[4/3] bg-muted flex items-center justify-center">
-                <Palette className="h-8 w-8 text-muted-foreground" />
-              </div>
-              <div className="p-4">
-                <div className="flex items-center justify-between mb-1">
-                  <h3 className="font-semibold text-sm">{theme.name}</h3>
-                  <span className="text-xs text-muted-foreground">{theme.price}</span>
+      {/* Theme library by category */}
+      {categories.map((cat) => (
+        <div key={cat.category} className="mb-8">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold">{cat.category} <span className="text-sm font-normal text-muted-foreground">({cat.themes.length} themes)</span></h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {cat.themes.map((theme) => (
+              <Link
+                key={theme.name}
+                to={theme.href}
+                className="bg-card rounded-xl border border-border overflow-hidden group hover:shadow-md transition-shadow"
+              >
+                <div className="aspect-[4/3] bg-muted flex items-center justify-center overflow-hidden">
+                  {theme.image ? (
+                    <img src={theme.image} alt={theme.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  ) : (
+                    <span className="text-2xl font-bold text-muted-foreground/30">{theme.name[0]}</span>
+                  )}
                 </div>
-                <p className="text-xs text-muted-foreground">{theme.style}</p>
-              </div>
-            </div>
-          ))}
+                <div className="p-3">
+                  <div className="flex items-center justify-between mb-0.5">
+                    <h3 className="font-semibold text-sm">{theme.name}</h3>
+                    <span className="text-xs text-muted-foreground">{theme.price}</span>
+                  </div>
+                  {theme.rating && (
+                    <span className="text-xs text-muted-foreground">{theme.rating} rating</span>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }
