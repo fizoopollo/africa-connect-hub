@@ -1,8 +1,17 @@
-import { Link } from "react-router-dom";
-import { Bell, CircleHelp, ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Bell, CircleHelp, ChevronDown, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAdminAuth } from "@/stores/adminAuth";
 
 export default function AdminTopbar() {
+  const logout = useAdminAuth((s) => s.logout);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/admin/login");
+  };
+
   return (
     <header className="h-14 bg-card border-b border-border flex items-center justify-between px-6 shrink-0">
       <div className="flex items-center gap-2">
@@ -21,6 +30,10 @@ export default function AdminTopbar() {
           </div>
           <ChevronDown className="h-3 w-3 text-muted-foreground" />
         </div>
+        <Button variant="ghost" size="sm" onClick={handleLogout} className="text-muted-foreground hover:text-foreground">
+          <LogOut className="h-4 w-4 mr-1" />
+          Logout
+        </Button>
       </div>
     </header>
   );
