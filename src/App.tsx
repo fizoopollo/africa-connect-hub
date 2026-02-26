@@ -65,6 +65,7 @@ import GalleriaTemplate from "./pages/templates/bags/GalleriaTemplate";
 import NotFound from "./pages/NotFound";
 
 // Admin
+import AdminLogin from "./pages/admin/AdminLogin";
 import AdminLayout from "./components/admin/AdminLayout";
 import AdminHome from "./pages/admin/AdminHome";
 import AdminOrders from "./pages/admin/AdminOrders";
@@ -149,7 +150,8 @@ const App = () => (
           <Route path="/afrify/templates/bags/leather" element={<LeatherTemplate />} />
           <Route path="/afrify/templates/bags/galleria" element={<GalleriaTemplate />} />
 
-          {/* Admin dashboard */}
+          {/* Admin */}
+          <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminHome />} />
             <Route path="orders" element={<AdminOrders />} />

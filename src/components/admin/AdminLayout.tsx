@@ -1,10 +1,16 @@
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import AdminSidebar from "./AdminSidebar";
 import AdminTopbar from "./AdminTopbar";
+import { useAdminAuth } from "@/stores/adminAuth";
 
 export default function AdminLayout() {
   const [collapsed, setCollapsed] = useState(false);
+  const isAuthenticated = useAdminAuth((s) => s.isAuthenticated);
+
+  if (!isAuthenticated) {
+    return <Navigate to="/admin/login" replace />;
+  }
 
   return (
     <div className="flex h-screen w-full overflow-hidden">
