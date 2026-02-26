@@ -61,33 +61,29 @@ export default function AdminOnlineStoreThemes() {
       </div>
 
       {/* Current theme */}
-      <div className="bg-card rounded-xl border border-border overflow-hidden mb-8">
-        <div className="px-6 py-4 border-b border-border">
-          <h2 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider">Current theme</h2>
-        </div>
-        <div className="flex flex-col md:flex-row">
-          <div className="md:w-80 bg-muted aspect-[4/3] md:aspect-auto flex items-center justify-center border-b md:border-b-0 md:border-r border-border overflow-hidden">
+      <div className="mb-8">
+        <h2 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-4">Current theme</h2>
+        <div className="bg-card rounded-xl border border-border overflow-hidden flex flex-col md:flex-row">
+          <div className="md:w-[400px] bg-muted flex-shrink-0 border-b md:border-b-0 md:border-r border-border overflow-hidden">
             {artTemplates[0] && (
-              <img src={artTemplates[0].image} alt={artTemplates[0].name} className="w-full h-full object-cover" />
+              <img src={artTemplates[0].image} alt={artTemplates[0].name} className="w-full h-full object-cover" style={{ minHeight: '320px', maxHeight: '480px' }} />
             )}
           </div>
           <div className="flex-1 p-6">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <h3 className="text-lg font-bold">{currentTheme.name}</h3>
-                  <span className="px-2 py-0.5 bg-primary/10 text-primary text-xs font-semibold rounded-full">
-                    {currentTheme.role}
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground">Version {currentTheme.version} · Last saved {currentTheme.lastSaved}</p>
+            <div className="flex items-start justify-between mb-1">
+              <div className="flex items-center gap-2">
+                <h3 className="text-xl font-bold">{currentTheme.name}</h3>
+                <span className="px-2.5 py-0.5 bg-green-100 text-green-700 text-xs font-semibold rounded-full">
+                  {currentTheme.role}
+                </span>
               </div>
               <Button variant="ghost" size="icon" className="h-8 w-8">
                 <MoreHorizontal className="h-4 w-4" />
               </Button>
             </div>
+            <p className="text-sm text-muted-foreground mb-4">Version {currentTheme.version} · Last saved {currentTheme.lastSaved}</p>
             <div className="flex gap-2">
-              <Button variant="default" size="sm">Customize</Button>
+              <Button variant="default" size="sm" className="bg-green-700 hover:bg-green-800 text-white">Customize</Button>
               <Button variant="outline" size="sm"><Eye className="h-4 w-4 mr-1" /> Preview</Button>
             </div>
           </div>
