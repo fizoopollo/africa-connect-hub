@@ -64,6 +64,23 @@ import LeatherTemplate from "./pages/templates/bags/LeatherTemplate";
 import GalleriaTemplate from "./pages/templates/bags/GalleriaTemplate";
 import NotFound from "./pages/NotFound";
 
+// Admin
+import AdminLayout from "./components/admin/AdminLayout";
+import AdminHome from "./pages/admin/AdminHome";
+import AdminOrders from "./pages/admin/AdminOrders";
+import AdminProducts from "./pages/admin/AdminProducts";
+import AdminCustomers from "./pages/admin/AdminCustomers";
+import AdminContent from "./pages/admin/AdminContent";
+import AdminAnalytics from "./pages/admin/AdminAnalytics";
+import AdminMarketing from "./pages/admin/AdminMarketing";
+import AdminDiscounts from "./pages/admin/AdminDiscounts";
+import AdminOnlineStoreThemes from "./pages/admin/AdminOnlineStoreThemes";
+import AdminOnlineStoreBlog from "./pages/admin/AdminOnlineStoreBlog";
+import AdminOnlineStorePages from "./pages/admin/AdminOnlineStorePages";
+import AdminOnlineStoreNavigation from "./pages/admin/AdminOnlineStoreNavigation";
+import AdminOnlineStorePreferences from "./pages/admin/AdminOnlineStorePreferences";
+import AdminSettings from "./pages/admin/AdminSettings";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -131,6 +148,25 @@ const App = () => (
           <Route path="/afrify/templates/bags/tote" element={<ToteTemplate />} />
           <Route path="/afrify/templates/bags/leather" element={<LeatherTemplate />} />
           <Route path="/afrify/templates/bags/galleria" element={<GalleriaTemplate />} />
+
+          {/* Admin dashboard */}
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminHome />} />
+            <Route path="orders" element={<AdminOrders />} />
+            <Route path="products" element={<AdminProducts />} />
+            <Route path="customers" element={<AdminCustomers />} />
+            <Route path="content" element={<AdminContent />} />
+            <Route path="analytics" element={<AdminAnalytics />} />
+            <Route path="marketing" element={<AdminMarketing />} />
+            <Route path="discounts" element={<AdminDiscounts />} />
+            <Route path="online-store/themes" element={<AdminOnlineStoreThemes />} />
+            <Route path="online-store/blog" element={<AdminOnlineStoreBlog />} />
+            <Route path="online-store/pages" element={<AdminOnlineStorePages />} />
+            <Route path="online-store/navigation" element={<AdminOnlineStoreNavigation />} />
+            <Route path="online-store/preferences" element={<AdminOnlineStorePreferences />} />
+            <Route path="settings" element={<AdminSettings />} />
+          </Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

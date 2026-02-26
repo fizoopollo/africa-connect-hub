@@ -53,6 +53,16 @@
     --surface-sunken: 40 10% 96%;
     --charcoal: 0 0% 10%;
     --charcoal-light: 0 0% 20%;
+
+    /* Admin sidebar (Shopify-dark) */
+    --admin-sidebar-bg: 0 0% 7%;
+    --admin-sidebar-fg: 0 0% 75%;
+    --admin-sidebar-fg-active: 0 0% 95%;
+    --admin-sidebar-hover: 0 0% 12%;
+    --admin-sidebar-active: 0 0% 15%;
+    --admin-sidebar-border: 0 0% 15%;
+    --admin-topbar-bg: 0 0% 100%;
+    --admin-topbar-border: 0 0% 90%;
   }
 
   .dark {

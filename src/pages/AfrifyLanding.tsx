@@ -70,7 +70,7 @@ export default function AfrifyLanding() {
               Build a beautiful online store in minutes. Accept mobile money, manage orders, and grow your business — all from one dashboard.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/signup">
+              <Link to="/admin">
                 <Button variant="orange" size="xl">
                   Start Building Free <ArrowRight className="h-5 w-5" />
                 </Button>
