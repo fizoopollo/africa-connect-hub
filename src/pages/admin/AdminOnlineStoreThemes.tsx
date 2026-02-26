@@ -102,28 +102,28 @@ export default function AdminOnlineStoreThemes() {
             <Button variant="outline" size="sm"><Plus className="h-4 w-4 mr-1" /> Explore more</Button>
           </Link>
         </div>
-        <div className="flex gap-4 overflow-x-auto pb-4">
+        <div className="flex flex-col gap-3">
           {themes.map((theme) => (
             <Link
               key={theme.name}
               to={theme.href}
-              className="bg-card rounded-xl border border-border overflow-hidden group hover:shadow-md transition-shadow flex-shrink-0 w-48"
+              className="bg-card rounded-xl border border-border overflow-hidden group hover:shadow-md transition-shadow flex flex-row items-center"
             >
-              <div className="aspect-[4/3] bg-muted flex items-center justify-center overflow-hidden">
+              <div className="w-24 h-16 sm:w-32 sm:h-20 bg-muted flex items-center justify-center overflow-hidden flex-shrink-0 border-r border-border">
                 {theme.image ? (
                   <img src={theme.image} alt={theme.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 ) : (
-                  <span className="text-2xl font-bold text-muted-foreground/30">{theme.name[0]}</span>
+                  <span className="text-xl font-bold text-muted-foreground/30">{theme.name[0]}</span>
                 )}
               </div>
-              <div className="p-3">
-                <div className="flex items-center justify-between mb-0.5">
-                  <h3 className="font-semibold text-sm truncate">{theme.name}</h3>
-                  <span className="text-xs text-muted-foreground">{theme.price}</span>
+              <div className="flex-1 px-4 py-2 flex items-center justify-between">
+                <div>
+                  <h3 className="font-semibold text-sm">{theme.name}</h3>
+                  {theme.rating && (
+                    <span className="text-xs text-muted-foreground">{theme.rating} rating</span>
+                  )}
                 </div>
-                {theme.rating && (
-                  <span className="text-xs text-muted-foreground">{theme.rating} rating</span>
-                )}
+                <span className="text-xs text-muted-foreground">{theme.price}</span>
               </div>
             </Link>
           ))}
